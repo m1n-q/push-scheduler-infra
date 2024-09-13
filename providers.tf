@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "push-scheduler"
+    workspaces {
+      name = "push-scheduler-infra"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,7 +15,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-northeast-2"
+  region     = "ap-northeast-2"
   # profile = "shopee-push-manager"
 }
 
